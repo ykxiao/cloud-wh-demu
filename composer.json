@@ -1,7 +1,7 @@
 {
     "name": "ykxiao/cloud-wh-api-sdk",
     "description": "Demu service API SDK",
-    "license": "Apache License",
+    "license": "MIT",
     "authors": [
         {
             "name": "ykxiao",
