@@ -1,6 +1,7 @@
 {
     "name": "ykxiao/cloud-wh-api-sdk",
     "description": "Demu service API SDK",
+    "keywords": ["laravel", "sdk"],
     "license": "MIT",
     "authors": [
         {
@@ -10,8 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.3.0",
-        "CloudWhDemu\\HttpClient": "^1.0"
+        "php": ">=7.3.0"
     },
     "autoload": {
         "psr-4": {
