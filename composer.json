@@ -1,7 +1,6 @@
 {
     "name": "ykxiao/cloud-wh-api-sdk",
     "description": "Demu service API SDK",
-    "keywords": ["laravel", "sdk"],
     "license": "MIT",
     "authors": [
         {
