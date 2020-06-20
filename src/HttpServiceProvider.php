@@ -12,6 +12,11 @@ use Illuminate\Support\ServiceProvider;
 
 class HttpServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->publishes([
