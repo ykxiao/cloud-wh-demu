@@ -20,7 +20,7 @@ class HttpServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/cloud-service-sdk.php' => base_path('config/cloud-service-sdk.php'),
+            __DIR__ . '/../config/cloud.php' => base_path('config/cloud.php'),
         ]);
     }
 
@@ -43,7 +43,7 @@ class HttpServiceProvider extends ServiceProvider
     protected function registerLaravelBindings()
     {
         $this->app->singleton(CloudService::class, function ($app) {
-            return new CloudService($app['config']['cloud-service-sdk']);
+            return new CloudService($app['config']['cloud']);
         });
     }
 }
