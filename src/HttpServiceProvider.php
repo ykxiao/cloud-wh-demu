@@ -42,8 +42,8 @@ class HttpServiceProvider extends ServiceProvider
      */
     protected function registerLaravelBindings()
     {
-        $this->app->singleton(CloudService::class, function ($app) {
-            return new CloudService($app['config']['cloud']);
+        $this->app->singleton(CloudMonth::class, function ($app) {
+            return new CloudMonth($app['config']['cloud']);
         });
     }
 }
