@@ -16,5 +16,12 @@
         "psr-4": {
             "CloudWhDemu\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CloudWhDemu\\HttpServiceProvider"
+            ]
+        }
     }
 }
