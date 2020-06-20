@@ -58,7 +58,8 @@ class CloudService
      */
     protected function createClient($config)
     {
-        return new HttpClient($config);
+        $client = new HttpClient($config);
+        return $client;
     }
 
     /**

@@ -44,6 +44,10 @@ class HttpClient implements SendClient
         $this->accessToken = $this->config['token'];
     }
 
+    /**
+     * create a guzzle client
+     * @return Client
+     */
     protected function createClient()
     {
         return new Client([
@@ -51,6 +55,9 @@ class HttpClient implements SendClient
         ]);
     }
 
+    /**
+     * @return string
+     */
     public function getRobotUrl()
     {
         $query['access_token'] = $this->accessToken;
@@ -63,6 +70,12 @@ class HttpClient implements SendClient
         return $this->hookUrl . "?" . http_build_query($query);
     }
 
+    /**
+     * send message
+     * @param $url
+     * @param $params
+     * @return array
+     */
     public function send($params): array
     {
         $request = $this->client->post($this->getRobotUrl(), [
