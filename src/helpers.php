@@ -9,16 +9,22 @@
 namespace CloudWhDemu\CloudMonth;
 
 if (!function_exists('cloud_d')){
-    $arguments = func_get_args();
+    /**
+     * @return mixed
+     */
+    function cloud_d()
+    {
+        $arguments = func_get_args();
 
-    $month = app(CloudMonth::class);
+        $month = app(CloudMonth::class);
 
-    if (empty($arguments)) {
-        return $month;
-    }
+        if (empty($arguments)) {
+            return $month;
+        }
 
-    if (is_string($arguments[0])) {
-        $robot = $arguments[1] ?? 'default';
-        return $month->with($robot)->text($arguments[0]);
+        if (is_string($arguments[0])) {
+            $robot = $arguments[1] ?? 'default';
+            return $month->with($robot)->text($arguments[0]);
+        }
     }
 }
