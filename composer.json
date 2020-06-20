@@ -9,6 +9,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "keywords": ["laravel", "cloud-wh", "cloud-wh-api-sdk"],
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.2"

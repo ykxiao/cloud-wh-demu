@@ -1,6 +1,6 @@
 ## cloud-wh-demu
 
-1. PHP >= 7.2
+1. PHP >= 7.0
 2. **[Composer](https://getcomposer.org/)**
 3. openssl 拓展
 
@@ -16,15 +16,15 @@ $ composer require ykxiao/cloud-wh-api-sdk
 <?php
 
 use CloudWhDemu\HttpClient;
-$options = [
-    'app_id'    => '12edgkt',
-    'secret'    => 'f1c242f4f28f735d4687abb469072xxx',
-    'token'     => 'cloud-8674yue4weqd',
-    'log' => [
-        'level' => 'debug',
-        'file'  => '/tmp/cloud-http-sdk.log',
-    ],
-];
+$options = new CloudMonth([
+   "default" => [
+           'enabled' => true,
+           'token' => "you-push-token",
+           'timeout' => 2.0,
+           'ssl_verify' => true,
+           'secret' => '',
+   ]
+]);
 
 $options->text('Text Service SDK');
 
@@ -36,6 +36,17 @@ $options->text('Text Service SDK');
 php artisan vendor:publish --provider="CloudWhDemu\HttpServiceProvider"
 
 #会自动将cloud-service-sdk.php添加到您项目的配置文件当中
+
+$res = cloud()->text('Test Service SDK');
+dump($res);
+```
+
+## 相关配置
+```php
+CLOUD_WH_ENABLED=true   #(可选)默认为开启
+CLOUD_WH_TIME_OUT=      #超时时间
+CLOUD_WH_SSL_VERIFY=false   #是否开启SSL验证
+CLOUD_WH_SECRET=            #安全配置
 ```
 
 ## License
