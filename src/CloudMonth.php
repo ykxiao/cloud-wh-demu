@@ -54,7 +54,6 @@ class CloudMonth
      */
     public function text($content = ''){
         return $this->cloudService
-            ->setTextMessage($content)
-            ->send();
+            ->setTextMessage($content);
     }
 }
