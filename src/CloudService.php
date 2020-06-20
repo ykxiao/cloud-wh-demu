@@ -49,7 +49,6 @@ class CloudService
      * create a guzzle client
      * @param $config
      * @return HttpClient
-     * @author wangju 2019-05-17 20:25
      */
     protected function createClient($config)
     {

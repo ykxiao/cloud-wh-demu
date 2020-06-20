@@ -4,13 +4,13 @@
 2. **[Composer](https://getcomposer.org/)**
 3. openssl 拓展
 
-## Installation
+## 安装
 
 ```shell
 $ composer require ykxiao/cloud-wh-api-sdk
 ```
 
-## Usage
+## 在非Laravel框架中使用
 
 ```php
 <?php
@@ -26,13 +26,16 @@ $options = [
     ],
 ];
 
-return [];
+$options->text('Text Service SDK');
 
 ```
 
-## Execute after successful installation
+## 在laravel中使用
 ```shell
+#成功安装后执行：
 php artisan vendor:publish --provider="CloudWhDemu\HttpServiceProvider"
+
+#会自动将cloud-service-sdk.php添加到您项目的配置文件当中
 ```
 
 ## License
