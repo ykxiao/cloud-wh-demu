@@ -6,7 +6,7 @@
  * Description:
  */
 
-namespace CloudWhDemu\CloudMonth;
+use CloudWhDemu\CloudMonth;
 
 if (!function_exists('cloud_d')){
     /**
