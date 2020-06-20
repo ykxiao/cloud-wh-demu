@@ -33,9 +33,15 @@ class CloudService
      */
     protected $client;
 
+    /**
+     * CloudService constructor.
+     * @param $config
+     * @param null $client
+     */
     public function __construct($config, SendClient $client = null)
     {
         $this->config = $config;
+        $this->setTextMessage('null');
 
         if ($client != null) {
             $this->client = $client;
@@ -55,6 +61,10 @@ class CloudService
         return new HttpClient($config);
     }
 
+    /**
+     * @param $content
+     * @return $this
+     */
     public function setTextMessage($content)
     {
         $this->message = new Contents($content);
@@ -73,6 +83,10 @@ class CloudService
         return $this->client->send($this->message->getBody());
     }
 
+    /**
+     * @param array $mobiles
+     * @param bool $atAll
+     */
     public function setAt($mobiles = [], $atAll = false)
     {
         $this->mobiles = $mobiles;

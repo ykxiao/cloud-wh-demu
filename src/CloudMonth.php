@@ -48,12 +48,21 @@ class CloudMonth
         return $this;
     }
 
+    /**
+     * @param string $content
+     * @return mixed
+     */
     public function text($content = ''){
         return $this->cloudService
             ->setTextMessage($content)
             ->send();
     }
 
+    /**
+     * @param array $mobiles
+     * @param bool $atAll
+     * @return $this
+     */
     public function at($mobiles = [], $atAll = false){
         $this->cloudService
             ->setAt($mobiles,$atAll);
