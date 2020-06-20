@@ -8,9 +8,26 @@
 
 namespace CloudWhDemu;
 
+use CloudWhDemu\Sender\Contents;
+use CloudWhDemu\Sender\Message;
+
 class CloudService
 {
+    /**
+     * @var Message
+     */
+    protected $message;
     protected $config;
+
+    /**
+     * @var array
+     */
+    protected $mobiles = [];
+    /**
+     * @var bool
+     */
+    protected $atAll = false;
+
     /**
      * @var SendClient
      */
@@ -37,5 +54,23 @@ class CloudService
     protected function createClient($config)
     {
         return new HttpClient($config);
+    }
+
+    public function setTextMessage($content)
+    {
+        $this->message = new Contents($content);
+        $this->message->sendAt($this->mobiles, $this->atAll);
+        return $this;
+    }
+
+    /**
+     * @return bool|array
+     */
+    public function send()
+    {
+        if (!$this->config['enabled']) {
+            return false;
+        }
+        return $this->client->send($this->message->getBody());
     }
 }

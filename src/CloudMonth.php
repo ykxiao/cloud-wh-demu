@@ -22,7 +22,7 @@ class CloudMonth
     /**
      * @var CloudService
      */
-    protected $dingTalkService;
+    protected $cloudService;
 
     protected $client;
 
@@ -39,7 +39,13 @@ class CloudMonth
      */
     public function with($robot = 'default'){
         $this->robot = $robot;
-        $this->dingTalkService = new CloudService($this->config[$robot],$this->client);
+        $this->cloudService = new CloudService($this->config[$robot],$this->client);
         return $this;
+    }
+
+    public function text($content = ''){
+        return $this->cloudService
+            ->setTextMessage($content)
+            ->send();
     }
 }
