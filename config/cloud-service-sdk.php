@@ -7,19 +7,18 @@
  */
 
 return [
-    // 默认发送的机器人
-
+    // 德木云仓服务接口默认配置
     'default' => [
-        // 是否要开启机器人，关闭则不再发送消息
-        'enabled' => env('DING_ENABLED',true),
-        // 机器人的access_token
-        'token' => env('DING_TOKEN',''),
-        // 钉钉请求的超时时间
-        'timeout' => env('DING_TIME_OUT',2.0),
+        // 是否要开服务
+        'enabled' => env('CLOUD_WH_ENABLED',true),
+        // 服务端的access_token
+        'token' => env('CLOUD_WH_TOKEN',''),
+        // 服务接口请求的超时时间
+        'timeout' => env('CLOUD_WH_TIME_OUT',2.0),
         // 是否开启ss认证
-        'ssl_verify' => env('DING_SSL_VERIFY',true),
+        'ssl_verify' => env('CLOUD_WH_SSL_VERIFY',true),
         // 开启安全配置
-        'secret' => env('DING_SECRET',true),
+        'secret' => env('CLOUD_WH_SECRET',true),
     ],
 
     'other' => [
@@ -29,8 +28,8 @@ return [
 
         'timeout' => env('OTHER_DING_TIME_OUT',2.0),
 
-        'ssl_verify' => env('DING_SSL_VERIFY',true),
+        'ssl_verify' => env('CLOUD_WH_SSL_VERIFY',true),
 
-        'secret' => env('DING_SECRET',true),
+        'secret' => env('CLOUD_WH_SECRET',true),
     ]
 ];
