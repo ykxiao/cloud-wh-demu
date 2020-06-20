@@ -58,8 +58,7 @@ class CloudService
      */
     protected function createClient($config)
     {
-        $client = new HttpClient($config);
-        return $client;
+        return new HttpClient($config);
     }
 
     /**
@@ -69,7 +68,6 @@ class CloudService
     public function setTextMessage($content)
     {
         $this->message = new Contents($content);
-        $this->message->sendAt($this->mobiles, $this->atAll);
         return $this;
     }
 
@@ -82,18 +80,5 @@ class CloudService
             return false;
         }
         return $this->client->send($this->message->getBody());
-    }
-
-    /**
-     * @param array $mobiles
-     * @param bool $atAll
-     */
-    public function setAt($mobiles = [], $atAll = false)
-    {
-        $this->mobiles = $mobiles;
-        $this->atAll = $atAll;
-        if ($this->message) {
-            $this->message->sendAt($mobiles, $atAll);
-        }
     }
 }
