@@ -35,7 +35,7 @@ $options->text('Text Service SDK');
 #成功安装后执行：
 php artisan vendor:publish --provider="CloudWhDemu\HttpServiceProvider"
 
-#会自动将cloud-service-sdk.php添加到您项目的配置文件当中
+#会自动将cloud.php添加到您项目的配置文件当中
 
 $res = cloud()->text('Test Service SDK');
 dump($res);
