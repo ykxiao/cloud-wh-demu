@@ -72,4 +72,13 @@ class CloudService
         }
         return $this->client->send($this->message->getBody());
     }
+
+    public function setAt($mobiles = [], $atAll = false)
+    {
+        $this->mobiles = $mobiles;
+        $this->atAll = $atAll;
+        if ($this->message) {
+            $this->message->sendAt($mobiles, $atAll);
+        }
+    }
 }

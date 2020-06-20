@@ -48,4 +48,10 @@ class CloudMonth
             ->setTextMessage($content)
             ->send();
     }
+
+    public function at($mobiles = [], $atAll = false){
+        $this->cloudService
+            ->setAt($mobiles,$atAll);
+        return $this;
+    }
 }

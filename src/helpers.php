@@ -10,7 +10,7 @@ namespace CloudWhDemu\CloudMonth;
 
 if (!function_exists('cloud_d')){
     /**
-     * @return mixed
+     * @return bool|CloudMonth
      */
     function cloud_d()
     {
