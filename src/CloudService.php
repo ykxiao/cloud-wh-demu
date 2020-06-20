@@ -20,15 +20,6 @@ class CloudService
     protected $config;
 
     /**
-     * @var array
-     */
-    protected $mobiles = [];
-    /**
-     * @var bool
-     */
-    protected $atAll = false;
-
-    /**
      * @var SendClient
      */
     protected $client;
@@ -72,13 +63,14 @@ class CloudService
     }
 
     /**
+     * @param string $api
      * @return bool|array
      */
-    public function send()
+    public function send($api = '')
     {
         if (!$this->config['enabled']) {
             return false;
         }
-        return $this->client->send($this->message->getBody());
+        return $this->client->send($this->message->getBody(), $api);
     }
 }

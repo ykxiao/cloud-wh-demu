@@ -50,11 +50,12 @@ class CloudMonth
 
     /**
      * @param string $content
+     * @param string $api
      * @return mixed
      */
-    public function text($content = ''){
+    public function text($content = '', $api = ''){
         return $this->cloudService
             ->setTextMessage($content)
-            ->send();
+            ->send($api);
     }
 }

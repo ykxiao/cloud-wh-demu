@@ -10,5 +10,5 @@ namespace CloudWhDemu;
 
 interface SendClient
 {
-    public function send($params): array;
+    public function send($params, $api = ''): array;
 }

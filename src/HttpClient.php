@@ -17,7 +17,7 @@ class HttpClient implements SendClient
     /**
      * @var string
      */
-    protected $hookUrl = "https://cloud-wh-dev.dwood365.com/service/v1/send";
+    protected $hookUrl = "https://cloud-wh-dev.dwood365.com/service/v1/";
 
     /**
      * @var string
@@ -56,9 +56,10 @@ class HttpClient implements SendClient
     }
 
     /**
+     * @param $api
      * @return string
      */
-    public function getRobotUrl()
+    public function getRobotUrl($api)
     {
         $query['access_token'] = $this->accessToken;
         if (isset($this->config['secret']) && $secret = $this->config['secret']) {
@@ -67,18 +68,18 @@ class HttpClient implements SendClient
             $query['timestamp'] = $timestamp;
             $query['sign'] = base64_encode($sign);
         }
-        return $this->hookUrl . "?" . http_build_query($query);
+        return $this->hookUrl . $api . "?" . http_build_query($query);
     }
 
     /**
      * send message
-     * @param $url
      * @param $params
+     * @param string $api
      * @return array
      */
-    public function send($params): array
+    public function send($params, $api = ''): array
     {
-        $request = $this->client->post($this->getRobotUrl(), [
+        $request = $this->client->post($this->getRobotUrl($api), [
             'body' => json_encode($params),
             'headers' => [
                 'Content-Type' => 'application/json',
