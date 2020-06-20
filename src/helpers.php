@@ -8,11 +8,11 @@
 
 use CloudWhDemu\CloudMonth;
 
-if (!function_exists('cloud_d')){
+if (!function_exists('cloud')){
     /**
      * @return bool|CloudMonth
      */
-    function cloud_d()
+    function cloud()
     {
         $arguments = func_get_args();
 

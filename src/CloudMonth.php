@@ -26,6 +26,11 @@ class CloudMonth
 
     protected $client;
 
+    /**
+     * Month constructor.
+     * @param $config
+     * @param SendClient $client
+     */
     public function __construct($config, $client = null)
     {
         $this->config = $config;
