@@ -8,6 +8,7 @@
 
 namespace CloudWhDemu;
 
+use CloudWhDemu\Sender\ArrayCon;
 use CloudWhDemu\Sender\Contents;
 use CloudWhDemu\Sender\Message;
 
@@ -59,6 +60,12 @@ class CloudService
     public function setTextMessage($content)
     {
         $this->message = new Contents($content);
+        return $this;
+    }
+
+    public function setArrayMessage($content)
+    {
+        $this->message = new ArrayCon($content);
         return $this;
     }
 

@@ -53,9 +53,17 @@ class CloudMonth
      * @param string $api
      * @return mixed
      */
-    public function text($content = '', $api = ''){
+    public function text($content = '', $api = '')
+    {
         return $this->cloudService
             ->setTextMessage($content)
+            ->send($api);
+    }
+
+    public function arrayCon($array = [], $api = '')
+    {
+        return $this->cloudService
+            ->setArrayMessage($array)
             ->send($api);
     }
 }

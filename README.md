@@ -26,7 +26,7 @@ $options = new CloudMonth([
    ]
 ]);
 
-$options->text('Text Service SDK');
+$options->text('Text Service SDK', 'send');
 
 ```
 
@@ -37,7 +37,7 @@ php artisan vendor:publish --provider="CloudWhDemu\HttpServiceProvider"
 
 #会自动将cloud.php添加到您项目的配置文件当中
 
-$res = cloud()->text('Test Service SDK');
+$res = cloud()->text('Test Service SDK', 'send');
 dump($res);
 ```
 
