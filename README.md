@@ -27,7 +27,9 @@ $options = new CloudMonth([
    ]
 ]);
 
-$options->text('Text Service SDK', 'send');
+$res = $options->text('Text Service SDK', 'send');
+
+dump($res);
 
 ```
 
