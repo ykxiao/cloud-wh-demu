@@ -8,6 +8,7 @@
 
 /**
  * 德木云仓服务接口默认配置
+ * 德木仓储后台获取SECRET、Token
  */
 return [
     'default' => [

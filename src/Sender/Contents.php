@@ -10,6 +10,11 @@ namespace CloudWhDemu\Sender;
 
 class Contents extends Message
 {
+    /**
+     * 字符串支持
+     * Contents constructor.
+     * @param $content
+     */
     public function __construct($content)
     {
         $this->message = [

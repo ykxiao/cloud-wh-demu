@@ -3,6 +3,7 @@
 1. PHP >= 7.0
 2. **[Composer](https://getcomposer.org/)**
 3. openssl 拓展
+4. 支持 >TP5.* + ; Laravel6.* +
 
 ## 安装
 

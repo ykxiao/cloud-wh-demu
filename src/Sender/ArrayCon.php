@@ -10,6 +10,11 @@ namespace CloudWhDemu\Sender;
 
 class ArrayCon extends Message
 {
+    /**
+     * 数组支持
+     * ArrayCon constructor.
+     * @param $content
+     */
     public function __construct($content)
     {
         $this->message = [
