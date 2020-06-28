@@ -19,9 +19,7 @@ class ArrayCon extends Message
     {
         $this->message = [
             'msgtype' => 'array',
-            'array' => [
-                'content' => $content
-            ]
+            'data' => $content
         ];
     }
 }

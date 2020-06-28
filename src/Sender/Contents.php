@@ -19,9 +19,7 @@ class Contents extends Message
     {
         $this->message = [
             'msgtype' => 'text',
-            'text' => [
-                'content' => $content
-            ]
+            'data' => $content
         ];
     }
 }
