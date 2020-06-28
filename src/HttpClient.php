@@ -17,7 +17,7 @@ class HttpClient implements SendClient
     /**
      * @var string
      */
-    protected $hookUrl = "https://cloud-wh-dev.dwood365.com/service/v1/";
+    protected $hookUrl = "http://dm-wh-new.com/service/v1/";
 
     /**
      * @var string
